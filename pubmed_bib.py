@@ -55,14 +55,14 @@ def format_reference(reference, use_short):
     ref_id += str(year)
 
     output = f'''@article{{{ ref_id },
-    title={{{title}}},
-    author={{{' and '.join(authorList)}}},
-    {"journal-long" if use_short else "journal"}={{{journal_long}}},
-    {"journal" if use_short else "journal-short"}={{{journal_short}}},
-    volume={{{volume}}},
-    pages={{{page}}},
-    year={{{year}}},
-    doi={{{doi}}}
+    title = {{{title}}},
+    author = {{{' and '.join(authorList)}}},
+    {"journal-long" if use_short else "journal"} = {{{journal_long}}},
+    {"journal" if use_short else "journal-short"} = {{{journal_short}}},
+    volume = {{{volume}}},
+    pages = {{{page}}},
+    year = {{{year}}},
+    doi = {{{doi}}}
 }}
 '''
     return output
