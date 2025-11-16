@@ -54,6 +54,9 @@ def format_reference(reference, use_short):
             if "family" in authors[0].keys() else authors[0]
     ref_id += str(year)
 
+    # NOTE: remove all spaces from author surname
+    ref_id = ref_id.replace(' ', '')
+
     output = f'''@article{{{ ref_id },
     title = {{{title}}},
     author = {{{' and '.join(authorList)}}},
