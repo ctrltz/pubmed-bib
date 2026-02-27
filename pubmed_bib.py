@@ -3,6 +3,8 @@ import requests
 import json
 import re
 
+from unidecode import unidecode
+
 
 # Get a reference from PubMed database
 def get_reference(id):
@@ -54,8 +56,8 @@ def format_reference(reference, use_short):
             if "family" in authors[0].keys() else authors[0]
     ref_id += str(year)
 
-    # NOTE: remove all spaces from author surname
-    ref_id = ref_id.replace(' ', '')
+    # NOTE: convert unicode to ascii, remove all non-word characters from author surname
+    ref_id = re.sub("\\W+", "", unidecode(ref_id))
 
     output = f'''@article{{{ ref_id },
     title = {{{title}}},

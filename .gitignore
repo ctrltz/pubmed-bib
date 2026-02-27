@@ -1,5 +1,6 @@
 __pycache__
 .vscode
+build
 pubmed_bib.egg-info
 output.bib
 output2.bib
